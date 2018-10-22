@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_131735) do
+ActiveRecord::Schema.define(version: 2018_10_22_140151) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "postcode"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_131735) do
     t.string "picture_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "relevants", force: :cascade do |t|
