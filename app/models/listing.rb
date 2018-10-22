@@ -4,5 +4,5 @@ class Listing < ApplicationRecord
   has_many :favourites
   has_many :users, through: :favourites
   has_many :users, through: :relevants
-  belongs_to :user
+  belongs_to :user, optional: true
 end
