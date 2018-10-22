@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   before_action :locate_listing, only: [:edit, :update, :show, :destroy]
 
   def index
-    @listings=Listings.all
+    @listings=Listing.all
   end
 
   def edit
@@ -42,7 +42,6 @@ class ListingsController < ApplicationController
     redirect_to
     #do not let the user browse without an active advertisement
   end
-
 
   private
 
