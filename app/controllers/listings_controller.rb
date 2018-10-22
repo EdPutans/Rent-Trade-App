@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
 #add routes for favorites and relevants
 
   # before_action :locate_listing, only: [:edit, :update, :show, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def favourites
   #  redirect_to listings_favourites_path
