@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update, :create]
   resources :listings
-  get '/listings/favourite', to: 'listings#favourite'
-  get '/listings/relevant', to: 'listings#relevant'
+  get 'relevant', to: 'listings#relevant'
+  get 'favourites', to: 'listings#favourites'
+  # '
+  # get 'listings/favourites', :to => 'listings#favourites'
 end

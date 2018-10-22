@@ -8,11 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-
-
   <body>
-    <%= link_to "Home", listings_path %>
+
+<a href="<%= listings_path %>"><img src="https://thumbs.gfycat.com/PerfectVelvetyJavalina-size_restricted.gif" border="5" style="width:100px;height:50px;border-color:blue;" alt="Home">      </a>
+
+<%= link_to "Add a listing", new_listing_path %>
+<%= link_to "Favourites", favourites_path %>
+<%= link_to "Relevant", relevant_path %>
+<% if @user %>
+<%= link_to "Profile", user_path(@user) %>
+<% end %>
+
     <%= yield %>
   </body>
 </html>

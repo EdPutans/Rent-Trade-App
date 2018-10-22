@@ -32,11 +32,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def favourite
-  end
 
-  def relevant
-  end
 
   #login
   def user_params

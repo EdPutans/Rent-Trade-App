@@ -1,0 +1,17 @@
+ <%= form_for @listing do |l|   %>
+   <%= l.label :title %><br>
+   <%= l.text_field :title %><br>
+   <%= l.label :description %><br>
+   <%= l.text_area :description %><br>
+   <%= l.label :landlord_name %><br>
+   <%= l.text_field :landlord_name %><br>
+   <%= l.label :landlord_email %><br>
+   <%= l.text_field :landlord_email %><br>
+   <%= l.label :landlord_phone %><br>
+   <%= l.text_field :landlord_phone %><br>
+   <%= l.label :landlord_info %><br>
+   <%= l.text_field :landlord_info %><br>
+   <%= l.label :description %><br>
+   <%= l.text_field :description %><br>
+   <%= l.submit 'Submit' %><br>
+ <% end %>
