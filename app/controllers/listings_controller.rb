@@ -43,11 +43,6 @@ class ListingsController < ApplicationController
     #do not let the user browse without an active advertisement
   end
 
-  def favourite
-  end
-
-  def relevant
-  end
 
   private
 

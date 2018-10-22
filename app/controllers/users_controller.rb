@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def favourite
+  end
+
+  def relevant
+  end
+
   #login
   def user_params
     params.require(:user).permit(:first_name, :last_name, :phone, :username, :password, :bio)
