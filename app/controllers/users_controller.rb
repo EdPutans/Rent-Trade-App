@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
 
-    before_action :locate_user, only: [:edit, :update, :show]
+    # before_action :locate_user, only: [:edit, :update, :show]
+
+    def index
+     redirect_to listings_path
+    end
 
     def new
       @user=User.new
     end
 
   def show
+    # @user = User.find(params[:id])
+    session.clear
+    redirect_to root_path
   end
 
   def edit
@@ -31,6 +38,11 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     end
   end
+
+  # def destroy
+  #   session.clear
+  #   redirect_to root_path
+  # end
 
 
 
