@@ -10,7 +10,7 @@ class Listing < ApplicationRecord
   validates :description, :title, :landlord_name, :landlord_info, :landlord_phone, :landlord_email, :postcode, presence: true
   # date, :available,
   validates :title, :landlord_phone, :landlord_name, uniqueness: true
-  validates :postcode, length: {maximum: 7}
+  # validates :postcode, length: {maximum: 7}
   validates :landlord_phone, numericality: true
 
 end

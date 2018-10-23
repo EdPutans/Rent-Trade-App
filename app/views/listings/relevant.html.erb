@@ -2,7 +2,7 @@
 <% if @user.relevants.length > 0 %>
 <% Listing.all.each do |l| %>
   <% @user.relevants.each do |relevant| %>
-    <% if l.postcode == relevant.postcode %>
+    <% if l.postcode[0..2] == relevant.postcode[0..2] %>
 
     <table>
       <tr>
