@@ -4,7 +4,7 @@
   <% @user.relevants.each do |relevant| %>
     <% if l.postcode[0..2] == relevant.postcode[0..2] or l.postcode == relevant.postcode%>
           <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
-          <p class="column"><%= l.title %></p>
+          <p class="column"><%= link_to l.title, listing_path(l) %></p>
           <p class="column"><%= l.description %></p>
     <% end %>
 
