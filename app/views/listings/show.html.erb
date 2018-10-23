@@ -3,6 +3,9 @@
 <h2><%= @listing.title %></h2><hr><br>
 
 <img src="<%= @listing.picture_url%>" style="width:400px;height:200px;">
+<% @pictures.each do |picture| %>
+<img src="<%= picture.picture_url%>" style="width:400px;height:200px;">
+<% end %>
 
 <br><br>
 <p>  <%= @listing.description %> </p><hr>

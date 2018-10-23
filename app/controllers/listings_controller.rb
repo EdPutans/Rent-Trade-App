@@ -26,6 +26,8 @@ class ListingsController < ApplicationController
 
   def show
      @listing=Listing.find(params[:id])
+     @pictures=Picture.where(listing_id: @listing.id)
+   # byebug
   end
 
   def update
@@ -41,6 +43,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing=Listing.new
+
   end
 
   def create
