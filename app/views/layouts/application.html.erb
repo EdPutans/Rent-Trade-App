@@ -19,10 +19,11 @@
 <% end %>
 
 <% if user_signed_in? %>
-<%= link_to "Sign Out", destroy_user_session_path %>&nbsp &nbsp
+<%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>&nbsp &nbsp
 <%= link_to "Add a listing", new_listing_path %>&nbsp &nbsp
 <%= link_to "Favourites", favourites_path %>&nbsp &nbsp
 <%= link_to "Relevant", relevant_path %>&nbsp &nbsp
+<%= link_to "Account Settings", edit_user_registration_path %>
 <%end%>
 
 

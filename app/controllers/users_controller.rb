@@ -12,8 +12,9 @@ class UsersController < ApplicationController
 
   def show
     # @user = User.find(params[:id])
-    session.clear
-    redirect_to root_path
+    #we do not why but works
+     # session.clear
+     # redirect_to root_path
   end
 
   def edit
@@ -39,10 +40,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # def destroy
-  #   session.clear
-  #   redirect_to root_path
-  # end
+  def delete
+    session.clear
+    redirect_to root_path
+  end
 
 
 
