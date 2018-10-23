@@ -80,6 +80,8 @@ class ListingsController < ApplicationController
 
   def remove_favourite
     @favourite=Favourite.find(params[:id])
+    @favourite.destroy
+    redirect_to favourites_path
   end
 
 
