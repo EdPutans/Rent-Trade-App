@@ -1,6 +1,6 @@
-<% @user.favourites.each do |f| %>
-<a href="<%= listing_path(f.listing) %>"><img src="<%= f.listing.picture_url%>" style="max-width:200px;max-height:100px;"> </a>
-<h5><%= link_to f.listing.title,listing_path(f.listing) %></h5><br>
-<%= link_to "Remove favourite", favourites_path(id: f.id), method: :delete %>
-<br><hr>
-<% end %>
+<div><% @user.favourites.each do |l| %>
+  <a href="<%= listing_path(l.listing) %>" class="column"><img src="<%= l.listing.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
+  <p class="column"><%= link_to l.listing.title, listing_path(l.listing)  %></p>
+  <p class="column"><%= l.listing.description %></p>
+<br>
+<% end %><br></div>
