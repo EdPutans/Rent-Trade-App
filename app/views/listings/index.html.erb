@@ -4,7 +4,7 @@
 <table>
   <tr>
       <td><a href="<%= listing_path(l) %>"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:100px;"> </a> </td>
-      <td><%= l.title %></td>
+      <td><%= link_to l.title, listing_path(l) %></td>
       <td><%= l.description %></td><br>
   </tr>
 </table><hr>

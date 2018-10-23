@@ -8,18 +8,24 @@
 <% end %>
 
 <br><br>
-<p>  <%= @listing.description %> </p><hr>
+<p>  <%= @listing.description %> </p><br>
+<p> Postcode: <%= @listing.postcode %> </p><br>
+<hr>
 
 
-Contacts:<br>
+
+<h4>About the tenant:</h4><br>
+<% if @listing.user %>
+<%= @listing.user.first_name %>
+<% end %>
 All the contacts to be added here once we make all the fields mandatory to create a listing. Otherwise - rails nil class problems. Use table or column way to make it pretty.
 
+<hr>
+<h4>About the Landlord:</h4>
 
-
-
-<%=  %><br>
-<%=  %><br>
-<%=  %><br>
-<%=  %><br>
+Landlord: <%= @listing.landlord_name %><br>
+About him/her: <%= @listing.landlord_info %><br>
+Phone: <%= @listing.landlord_phone %><br>
+Email: <%= @listing.landlord_email %><br>
 <%=  %><br>
 <%=  %><br>

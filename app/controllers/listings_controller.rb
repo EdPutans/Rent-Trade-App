@@ -48,9 +48,10 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing=Listing.create(listing_params)
+    @listing=Listing.new(listing_params)
     if @listing.valid?
-      redirect_to listing_path
+      @listing.save
+      redirect_to listing_path(@listing)
     else
       flash[:errors]=@listing.errors.full_messages
       redirect_to new_listing_path
