@@ -68,12 +68,21 @@ class ListingsController < ApplicationController
 
   def add_to_favourites
     @listing=Listing.find(params[:id])
-    # byebug
-    @favourite=Favourite.create(user: current_user, listing: @listing)
-    #if doesnt contain - to be added
-    current_user.favourites << @favourite
-    redirect_to favourites_path
+    @favourite=Favourite.find_or_create_by(user: current_user, listing: @listing)
+    #byebug
+    if !current_user.favourites.include?(@favourite)
+      @favourite.save
+      redirect_to favourites_path
+    else
+      redirect_to favourites_path
+    end
   end
+
+  def remove_favourite
+    @favourite=Favourite.find(params[:id])
+  end
+
+
 
 
   private

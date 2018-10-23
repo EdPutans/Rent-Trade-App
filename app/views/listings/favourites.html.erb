@@ -1,3 +1,4 @@
 <% @user.favourites.each do |f| %>
-<%= f.listing.title %>
+<a href="<%= listing_path(f.listing) %>"><img src="<%= f.listing.picture_url%>" style="max-width:200px;max-height:100px;"> </a> 
+<h5><%= link_to f.listing.title,listing_path(f.listing) %></h5><br><hr>
 <% end %>
