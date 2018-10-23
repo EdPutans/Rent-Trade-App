@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
   end
 
   def relevant
+    @user = current_user
     # redirect_to listings_relevant_path
     # @relevant_listings=Listing.all
     #to be changed to listings.where(parameters...)

@@ -1,0 +1,13 @@
+
+
+<% if @user.relevants.length>0 %>
+<% Listing.all.each do |listing| %>
+  <% @user.relevants.each do |relevant| %>
+    <% if listing.postcode == relevant.postcode %>
+    <%= link_to listing.title, listing_path(listing) %>
+    <% end %>
+  <% end %>
+<% end %>
+<% else %>
+  You don't have any relevant listings yet. Try updating your postcodes of interest.
+<% end %>

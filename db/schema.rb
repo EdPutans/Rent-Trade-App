@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_204205) do
+ActiveRecord::Schema.define(version: 2018_10_23_113530) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "postcode"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_204205) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "postcode"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -54,10 +55,8 @@ ActiveRecord::Schema.define(version: 2018_10_22_204205) do
   end
 
   create_table "relevants", force: :cascade do |t|
+    t.string "postcode"
     t.integer "user_id"
-    t.integer "listing_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
