@@ -1,13 +1,11 @@
 <h2> This is the index page of Listings</h2>
 <hr>
   <% @listings.each do |l| %>
-<table>
-  <tr>
-      <td><a href="<%= listing_path(l) %>"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:100px;"> </a> </td>
-      <td><%= link_to l.title, listing_path(l) %></td>
-      <td><%= l.description %></td><br>
-  </tr>
-</table><hr>
+
+  <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
+  <p class="column"><%= link_to l.title, listing_path(l) %></p>
+  <p class="column"><%= l.description %></p>
+
   <% end %>
 
 <!--

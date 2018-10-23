@@ -3,14 +3,11 @@
 <% Listing.all.each do |l| %>
   <% @user.relevants.each do |relevant| %>
     <% if l.postcode[0..2] == relevant.postcode[0..2] or l.postcode == relevant.postcode%>
-    <table>
-      <tr>
-          <td><a href="<%= listing_path(l) %>"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:100px;"> </a> </td>
-          <td><%= l.title %></td>
-          <td><%= l.description %></td><br>
-      </tr>
-    </table><hr>
+          <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
+          <p class="column"><%= l.title %></p>
+          <p class="column"><%= l.description %></p>
     <% end %>
+
   <% end %>
 <% end %>
 <% else %>

@@ -7,29 +7,89 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+     {
+        box-sizing: border-box;
+    }
+
+    body {
+      background-color: #E8E8E8;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Style the side navigation */
+    .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+    }
+    img {
+        border-radius: 8px;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 100px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Side navigation links */
+    .sidenav a {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color on hover */
+    .sidenav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Style the content */
+    .content {
+        margin-left: 200px;
+        padding-left: 20px;
+    }
+    </style>
   </head>
   <body>
 
 <a href="<%= listings_path %>"><img src="https://thumbs.gfycat.com/PerfectVelvetyJavalina-size_restricted.gif" border="5" style="width:100px;height:50px;border-color:blue;" alt="Home">      </a>
 <br>
+<div class="sidenav">
 
 <% if !user_signed_in? %>
+<%= link_to "Home", listings_path %>
 <%= link_to "Sign Up", new_user_registration_path %>&nbsp &nbsp
 <%= link_to "Log In", new_user_session_path %>&nbsp &nbsp
 <% end %>
 
 <% if user_signed_in? %>
-<%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>&nbsp &nbsp
+<%= link_to "Home", listings_path %>>&nbsp &nbsp
 <%= link_to "Add a listing", new_listing_path %>&nbsp &nbsp
 <%= link_to "Favourites", favourites_path %>&nbsp &nbsp
 <%= link_to "Relevant", relevant_path %>&nbsp &nbsp
 <%= link_to "Account Settings", edit_user_registration_path %>&nbsp &nbsp
 <%= link_to "My Postcodes of Interest", postcodes_path %>&nbsp &nbsp
+<%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>&nbsp &nbsp
 <%end%>
+</div>
+<div class="content">
 
 
 <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
     <%= yield %>
+     </div>
   </body>
 </html>
