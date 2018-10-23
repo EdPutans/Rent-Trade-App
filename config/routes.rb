@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'favourites', to: 'listings#favourites'
   post 'favourites', to: 'listings#add_to_favourites'
   delete 'favourites/', to: 'listings#remove_favourite'
+
+  get 'postcodes', to: 'listings#postcodes'
+  post 'edit_postcodes', to: 'listings#edit_postcodes'
   # '
   # get 'listings/favourites', :to => 'listings#favourites'
 end

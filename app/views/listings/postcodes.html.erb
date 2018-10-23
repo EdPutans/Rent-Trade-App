@@ -1,0 +1,5 @@
+<%= form_tag("/edit_postcodes", method: "post") do %>
+  <%= label_tag(:postcodes, "Postcodes:") %>
+  <%= text_field_tag :postcodes, (params[:postcodes]) %>
+  <%= submit_tag("Change") %>
+<% end %>

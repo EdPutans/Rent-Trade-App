@@ -2,8 +2,7 @@
 <% if @user.relevants.length > 0 %>
 <% Listing.all.each do |l| %>
   <% @user.relevants.each do |relevant| %>
-    <% if l.postcode[0..2] == relevant.postcode[0..2] %>
-
+    <% if l.postcode[0..2] == relevant.postcode[0..2] or l.postcode == relevant.postcode%>
     <table>
       <tr>
           <td><a href="<%= listing_path(l) %>"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:100px;"> </a> </td>
