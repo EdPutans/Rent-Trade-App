@@ -11,6 +11,6 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :phone, :email, :username, :password, presence: true
   validates :phone, :email, :username, :password, uniqueness: true
-  validates :phone, numericality: {equal_to: 10}
-  validates :password, length: {:within => 8..20}
+  validates :phone, numericality: true
+  validates :password, length: {:within => 6..20}
 end
