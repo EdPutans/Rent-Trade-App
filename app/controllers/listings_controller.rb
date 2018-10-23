@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 #add routes for favorites and relevants
 
   # before_action :locate_listing, only: [:edit, :update, :show, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
   def favourites
   #  redirect_to listings_favourites_path
@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
   end
 
   def relevant
+    @user = current_user
     # redirect_to listings_relevant_path
     # @relevant_listings=Listing.all
     #to be changed to listings.where(parameters...)
@@ -47,9 +48,10 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing=Listing.create(listing_params)
+    @listing=Listing.new(listing_params)
     if @listing.valid?
-      redirect_to listing_path
+      @listing.save
+      redirect_to listing_path(@listing)
     else
       flash[:errors]=@listing.errors.full_messages
       redirect_to new_listing_path

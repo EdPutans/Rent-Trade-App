@@ -1,0 +1,19 @@
+<h3>Recommended listings:</h3><hr>
+<% if @user.relevants.length > 0 %>
+<% Listing.all.each do |l| %>
+  <% @user.relevants.each do |relevant| %>
+    <% if l.postcode == relevant.postcode %>
+
+    <table>
+      <tr>
+          <td><a href="<%= listing_path(l) %>"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:100px;"> </a> </td>
+          <td><%= l.title %></td>
+          <td><%= l.description %></td><br>
+      </tr>
+    </table><hr>
+    <% end %>
+  <% end %>
+<% end %>
+<% else %>
+  You don't have any relevant listings yet. Try updating your postcodes of interest.
+<% end %>
