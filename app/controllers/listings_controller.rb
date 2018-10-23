@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def favourites
+      @user = current_user
   #  redirect_to listings_favourites_path
     # @favourite_listings=Listing.all
     #to be changed to listings.where(parameters...)
@@ -59,10 +60,19 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-     @listing=Listing.find(params[:id])
+    @listing=Listing.find(params[:id])
     @listing.delete
     redirect_to
     #do not let the user browse without an active advertisement
+  end
+
+  def add_to_favourites
+    @listing=Listing.find(params[:id])
+    # byebug
+    @favourite=Favourite.create(user: current_user, listing: @listing)
+    #if doesnt contain - to be added
+    current_user.favourites << @favourite
+    redirect_to favourites_path
   end
 
 
@@ -73,7 +83,7 @@ class ListingsController < ApplicationController
   # end
 
   def listing_params
-    params.require(:listing).permit(:description, :title, :date, :landlord_name, :landlord_info, :landlord_phone, :landlord_email, :address_id, :picture_url)
+    params.require(:listing).permit(:description, :title, :date, :landlord_name, :landlord_info, :landlord_phone, :landlord_email, :address_id, :picture_url, :id)
   end
 
 end
