@@ -46,9 +46,14 @@ def edit_postcodes
   redirect_to relevant_path
 end
 
-  def index
-    @listings=Listing.all
-  end
+def index
+@listings = Listing.all
+if params[:search]
+  @listings = Listing.search(params[:search]).order("created_at DESC")
+else
+  @listings = Listing.all.order("created_at DESC")
+end
+end
 
   def edit
      @listing=Listing.find(params[:id])

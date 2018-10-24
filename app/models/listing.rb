@@ -13,4 +13,7 @@ class Listing < ApplicationRecord
   # validates :postcode, length: {maximum: 7}
   validates :landlord_phone, numericality: true
 
+  def self.search(search)
+    where("title LIKE ? OR description LIKE ? OR postcode LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

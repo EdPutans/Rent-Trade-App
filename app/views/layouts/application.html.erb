@@ -32,12 +32,16 @@
     }
     img {
       background: #eee;
-      border: 3px solid transparent;
-      border-radius: 8px;
+      border: 2px solid transparent;
+      border-radius: 3px;
     }
     img:hover {
         background: #e1e1e1;
-        border: 3px solid black;
+        border: 2px solid black;
+    }
+
+    .search {
+      align-items: center;
     }
 
     .column {
@@ -72,6 +76,7 @@
   </head>
   <body>
 
+
 <a href="<%= listings_path %>"><img src="https://thumbs.gfycat.com/PerfectVelvetyJavalina-size_restricted.gif" border="5" style="width:100px;height:50px;border-color:blue;" alt="Home">      </a>
 <br>
 <div class="sidenav">
@@ -97,6 +102,13 @@
 
 <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
+     <div class="search">
+
+     <p><%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+         <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+         <%= submit_tag "Search", :name => nil %>
+     <% end %>
+ </div>
     <%= yield %>
      </div>
   </body>
