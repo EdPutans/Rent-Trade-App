@@ -8,7 +8,10 @@ class ListingsController < ApplicationController
   def favourites
       @user = current_user
   end
-
+  def my_listings
+    @listings=Listing.where(user_id:current_user.id)
+    render :index
+  end
   def relevant
     @user = current_user
     @listings = Listing.all
