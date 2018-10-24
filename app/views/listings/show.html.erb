@@ -14,6 +14,7 @@
 <p> Postcode: <%= @listing.postcode %> </p><br>
 <hr>
 
+<% if @listing.user %>
 
 <h4>About the tenant:</h4>
 <% if @listing.user %>
@@ -24,7 +25,9 @@ Bio: <%=@listing.user.bio%><br>
 <%= @listing.user.phone %><br>
 <%= @listing.user.email %><br>
 <% end %><br>
-
+<%  else %>
+  <p align='center'> No information about the current tenant provided. <p>
+<% end %>
 
 <hr>
 <h4>About the Landlord:</h4>

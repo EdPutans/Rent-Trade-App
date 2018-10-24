@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
 
   def relevant
     @user = current_user
+    @listings = Listing.all
   end
 
   def add_to_favourites

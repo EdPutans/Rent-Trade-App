@@ -12,13 +12,32 @@
      {
         box-sizing: border-box;
     }
+    h4, h3, h2 {
+      text-align: center;
+    }
+    hr {
+      width: 90%
+    }
+    input, select, textarea {
+      width: 100%; /* Full width */
+      padding: 12px; /* Some padding */
+      border: 1px solid #ccc; /* Gray border */
+      border-radius: 4px; /* Rounded borders */
+      box-sizing: border-box; /* Make sure that padding and width stays in place */
+      margin-top: 6px; /* Add a top margin */
+      margin-bottom: 16px; /* Bottom margin */
+      resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
+
 
     body {
       background-color: #E8E8E8;
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
     }
-
+    .field {
+      margin-right: 20px;
+    }
     /* Style the side navigation */
     .sidenav {
         height: 100%;
@@ -40,16 +59,40 @@
         border: 2px solid black;
     }
 
-    .search {
+    .search-bar {
       align-items: center;
+      margin-right: 18px;
     }
+    .search-button {
+      hidden;
+    }
+
+
+
 
     .column {
         float: left;
-        width: 33.33%;
+        width: 20%;
         padding: 10px;
         height: 150px; /* Should be removed. Only for demonstration */
     }
+    .column2 {
+      text-align: center;
+        float: left;
+        width: 20%;
+        padding: 10px;
+        height: 150px; /* Should be removed. Only for demonstration */
+    }
+    .column3 {
+        text-align: justify;
+        float: left;
+        width: 60%;
+        padding: 10px;
+        height: 150px; /* Should be removed. Only for demonstration */
+    }
+
+
+
 
     /* Side navigation links */
     .sidenav a {
@@ -77,8 +120,7 @@
   <body>
 
 
-<a href="<%= listings_path %>"><img src="https://thumbs.gfycat.com/PerfectVelvetyJavalina-size_restricted.gif" border="5" style="width:100px;height:50px;border-color:blue;" alt="Home">      </a>
-<br>
+
 <div class="sidenav">
 
 <% if !user_signed_in? %>
@@ -88,7 +130,8 @@
 <% end %>
 
 <% if user_signed_in? %>
-<%= link_to "Home", listings_path %>>&nbsp &nbsp
+<a href="<%= listings_path %>"><img src="https://thumbs.gfycat.com/PerfectVelvetyJavalina-size_restricted.gif" border="5" style="width:150px;height:75px;" alt="Home">      </a>
+<br>
 <%= link_to "Favourites", favourites_path %>&nbsp &nbsp
 <%= link_to "Recommended", relevant_path %>&nbsp &nbsp
 <%= link_to "Add a listing", new_listing_path %>&nbsp &nbsp
@@ -102,11 +145,11 @@
 
 <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-     <div class="search">
+     <div class="search-bar">
 
-     <p><%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+     <p><%= form_tag(listings_path, :method => "get", id: "search-form") do %></p>
          <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-         <%= submit_tag "Search", :name => nil %>
+         <p hidden ><%= submit_tag "Search", :name => nil %></p>
      <% end %>
  </div>
     <%= yield %>
