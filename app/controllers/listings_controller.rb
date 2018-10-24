@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
 
   # before_action :locate_listing, only: [:edit, :update, :show, :destroy]
   before_action :authenticate_user!, except: [:index]
+  before_action :user_set
 
   def favourites
       @user = current_user
@@ -83,6 +84,7 @@ end
 
   def create
     @listing=Listing.new(listing_params)
+    @listing.user=current_user
     if @listing.valid?
       @listing.save
       redirect_to listing_path(@listing)
@@ -106,6 +108,9 @@ end
 
   private
 
+  def user_set
+    @user=current_user
+  end
   # def locate_listing
   #
   # end
