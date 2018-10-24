@@ -1,4 +1,4 @@
-<% if @user.favourites.length>0 %>
+<% if @user.favourites.length>0 %> 
 
 <div><% @user.favourites.each do |l| %>
   <a href="<%= listing_path(l.listing) %>" class="column"><img src="<%= l.listing.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
