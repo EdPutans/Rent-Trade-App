@@ -3,7 +3,11 @@ class UsersController < ApplicationController
     # before_action :locate_user, only: [:edit, :update, :show]
 
     def index
-     redirect_to listings_path
+      if current_user
+        redirect_to listings_path
+      else
+     render :layout => "carousel.html.erb"
+   end
     end
 
     def new
