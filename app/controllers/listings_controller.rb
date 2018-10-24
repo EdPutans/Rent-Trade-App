@@ -97,11 +97,13 @@ end
   def destroy
     @listing=Listing.find(params[:id])
     @listing.delete
-    redirect_to
+    redirect_to listings_path
     #do not let the user browse without an active advertisement
   end
 
-
+  def about
+    render :about
+  end
 
 
 

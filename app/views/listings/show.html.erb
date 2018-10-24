@@ -15,21 +15,22 @@
 <hr>
 
 <% if @listing.user %>
-
+<div class="column2" align='center'>
 <h4>About the tenant:</h4>
 <% if @listing.user %>
-Name: <%= @listing.user.first_name + ' ' + @listing.user.last_name%><br>
-<% if @listing.user.bio %><br>
+<%= @listing.user.first_name + ' ' + @listing.user.last_name%><br>
+<% if @listing.user.bio %><br><br>
 Bio: <%=@listing.user.bio%><br>
 <% end %>
 <%= @listing.user.phone %><br>
 <%= @listing.user.email %><br>
-<% end %><br>
-<%  else %>
-  <p align='center'> No information about the current tenant provided. <p>
 <% end %>
+<%  else %>
+<p align='center'> No information about the current tenant provided. <p>
+<% end %>
+</div>
 
-<hr>
+<div class="column2" align='center'>
 <h4>About the Landlord:</h4>
 
 Landlord: <%= @listing.landlord_name %><br>
@@ -38,3 +39,7 @@ Phone: <%= @listing.landlord_phone %><br>
 Email: <%= @listing.landlord_email %><br>
 <%=  %><br>
 <%=  %><br>
+</div>
+<% if current_user==@listing.user %>
+<%= link_to "Delete listing", listing_path(@listing), method: :delete %>
+<% end %>
