@@ -15,6 +15,10 @@
     h4, h3, h2 {
       text-align: center;
     }
+
+    .left_h4{
+      text-align: left
+    }
     hr {
       width: 95%
     }
@@ -61,7 +65,7 @@
       border-radius: 3px;
     }
 
-    }
+    
     img:hover {
         background: #e1e1e1;
         border: 1px solid black;
@@ -108,7 +112,6 @@
     .sidenav a {
         color: white;
         padding: 16px;
-
         display: block;
     }
 
@@ -143,7 +146,7 @@
 
 <% if user_signed_in? %>
 <a href="<%= listings_path %>"><img  src="<%=image_url('4.jpeg')%>" style="width:160px;height:100px;" margin-right=0 alt="Home">      </a>
-<br>
+
 <%= link_to "Favourites", favourites_path %>&nbsp &nbsp
 <%= link_to "Recommended", relevant_path %>&nbsp &nbsp
 <%= link_to "Add a listing", new_listing_path %>&nbsp &nbsp
