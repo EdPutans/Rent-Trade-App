@@ -1,0 +1,6 @@
+<%= form_for @picture do |pic| %>
+  <%= pic.label "Add picture url:" %><br>
+  <%= pic.text_field :picture_url %>
+  <%= pic.button "Submit", name: "listing_id", value: @list_id %>
+  
+<% end %>

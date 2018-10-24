@@ -67,7 +67,7 @@ end
   def show
      @listing=Listing.find(params[:id])
      @pictures=Picture.where(listing_id: @listing.id)
-   # byebug
+    # byebug
   end
 
   def update
@@ -90,6 +90,7 @@ end
     @listing.user=current_user
     if @listing.valid?
       @listing.save
+      Picture.create(picture_url: listing_params[:picture_url], listing_id: @listing.id)
       redirect_to listing_path(@listing)
     else
       flash[:errors]=@listing.errors.full_messages
@@ -108,6 +109,10 @@ end
     render :about
   end
 
+  def new_pic
+    @list_id =params[:id]
+    @picture = Picture.new
+  end
 
 
 
@@ -116,9 +121,6 @@ end
   def user_set
     @user=current_user
   end
-  # def locate_listing
-  #
-  # end
 
   def listing_params
     params.require(:listing).permit(:description, :title, :date, :landlord_name, :landlord_info, :landlord_phone, :landlord_email, :address_id, :picture_url, :id, :postcode, :postcodes)
