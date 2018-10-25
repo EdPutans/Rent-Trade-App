@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'postcodes', to: 'listings#postcodes'
   get 'my_listings', to: 'listings#my_listings'
   post 'edit_postcodes', to: 'listings#edit_postcodes'
+  
   # '
   # get 'listings/favourites', :to => 'listings#favourites'
 end

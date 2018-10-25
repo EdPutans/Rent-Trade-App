@@ -108,9 +108,6 @@ end
     render :about
   end
 
-
-
-
   private
 
   def user_set
