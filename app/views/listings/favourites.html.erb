@@ -3,8 +3,8 @@
 <div><% @user.favourites.each do |l| %>
   <% pict = Picture.where(listing_id: l.listing.id).first %>
   <a href="<%= listing_path(l.listing) %>" class="column"><img src="<%= pict.picture_url%>" style="max-width:100%;max-height:100%;"> </a>
-  <p class="column2"><%= link_to l.listing.title, listing_path(l.listing)  %></p>
-  <%= link_to "Remove favourite", favourites_path(id: l.id), method: :delete %>
+  <p class="column2"><%= link_to l.listing.title, listing_path(l.listing)  %><br><br><br><br>
+  <%= link_to "Remove favourite", favourites_path(id: l.id), method: :delete %></p>
   <p class="column3"><%= l.listing.description %></p>
 <br>
 <% end %><br></div>
