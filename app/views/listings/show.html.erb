@@ -1,3 +1,4 @@
+<%= require_relative '../../../config/api_key.rb' %>
 <style>
 .description {
   text-align: center;
@@ -59,7 +60,7 @@ Email: <%= @listing.landlord_email %>
 </div>
 <div class="map">
 
-    <iframe width="100%" height="300" frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?q=<%= @listing.postcode %>&zoom=13&key=AIzaSyC_xvj4fyXm-BoZy1LqGriNNXms12TKNy4" allowfullscreen></iframe>
+    <iframe width="100%" height="300" frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?q=<%= @listing.postcode %>&zoom=13&key= <%= KEY["key"] %>" allowfullscreen></iframe>
 
 
 </div>
