@@ -1,6 +1,7 @@
 <style>
 
 .map {
+  align: right;
   right: 0;
 }
 
@@ -17,7 +18,7 @@ h4 {
   <a href="<%=picture_path(pic)%> "> <img src=" <%= pic.picture_url %> " style="max-width:40%;height:150px;"></a>
 <% end %><br>
 
-
+<div align="left">
 <br><br>
 <p>  <%= @listing.description %> </p><br>
 <p> Postcode: <%= @listing.postcode %> </p><br>
@@ -27,7 +28,11 @@ h4 {
 <% else %>
   <p><%= link_to 'Add to favourites', favourites_path(id: @listing.id), method: :post %></p>
 <% end %>
-
+<div class="map">
+  <iframe width="300px" height="300px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<%= @listing.postcode %>&zoom=13&key=AIzaSyC_xvj4fyXm-BoZy1LqGriNNXms12TKNy4" allowfullscreen></iframe>
+</div>
+</div>
+</div>
 <div class="column1">
 <hr>
 <div class="people_info">
@@ -54,9 +59,3 @@ Email: <%= @listing.landlord_email %>
 </div>
 </div>
 <div class="column3">
-
-
-<div class="map">
-  <iframe width="300px" height="300px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<%= @listing.postcode %>&zoom=13&key=AIzaSyC_xvj4fyXm-BoZy1LqGriNNXms12TKNy4" allowfullscreen></iframe>
-</div>
-</div>
