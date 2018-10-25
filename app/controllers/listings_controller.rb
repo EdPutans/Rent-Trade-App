@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
     @listings=Listing.where(user_id:current_user.id)
     render :index
   end
+
   def relevant
     @user = current_user
     @listings = Listing.all

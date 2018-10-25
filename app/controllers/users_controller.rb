@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         redirect_to listings_path
       else
      render :layout => "carousel.html.erb"
-   end
+      end
     end
 
     def new

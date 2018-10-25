@@ -2,7 +2,7 @@
 <hr><br>
   <% @listings.each do |l| %>
   <% pict = Picture.where(listing_id: l.id).first %>
-  <a href="<%= listing_path(l) %>" class="column"><img src="<%= pict.picture_url%>" style="max-width:100%;max-height:100%;"> </a>
+  <a href="<%= listing_path(l) %>" class="column"><img src="<%= pict.picture_url %>" style="max-width:100%;max-height:100%;"> </a>
   <p align="center" class="column2"><%= link_to l.title, listing_path(l) %></p>
   <p class="column3"><%= l.description %></p>
 
