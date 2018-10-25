@@ -4,7 +4,7 @@
   <% @listings.each do |l| %>
     <% pict = Picture.where(listing_id: l.id).first %>
     <% @user.relevants.each do |relevant| %>
-      <% if l.postcode[0..2].downcase == relevant.postcode[0..2].downcase or l.postcode.downcase == relevant.postcode.downcase%>
+      <% if l.postcode[0..2].downcase == relevant.postcode[0..2].downcase or l.postcode.downcase == relevant.postcode.downcase or l.postcode[0..1].downcase == relevant.postcode[0..1].downcase%>
         <a href="<%= listing_path(l) %>" class="column"><img src="<%= pict.picture_url %>" style="max-width:100%;max-height:100%;"> </a>
         <p class="column2"><%= link_to l.title, listing_path(l) %></p>
         <p class="column3"><%= l.description %></p>
