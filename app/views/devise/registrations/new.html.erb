@@ -1,7 +1,14 @@
+<style>
+  .red {
+    color: red;
+    text-align: left;
+  }
+</style>
+
 <h2>Sign up</h2>
 
   <%= form_for(resource , as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+    <div class="red"><%= devise_error_messages! %></div>
 
     <div class="field">
       <%= f.label :first_name %><br />

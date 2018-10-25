@@ -1,7 +1,7 @@
-<% if flash[:errors] %> 
+<div text-color="red"><% if flash[:errors] %>
 <% flash[:errors].each do |h|%>
 <%= h %>
 <% end %>
 <% end %>
-<h2> Add your new listing here!</h2><br><br>
+<h2> Add your new listing here!</h2><br><br></div>
 <%= render 'form' %>
