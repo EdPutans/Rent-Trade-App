@@ -1,8 +1,8 @@
 <h2> Welcome to Rent Trader</h2>
 <hr><br>
   <% @listings.each do |l| %>
-
-  <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
+  <% pict = Picture.where(listing_id: l.id).first %>
+  <a href="<%= listing_path(l) %>" class="column"><img src="<%= pict.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
   <p align="center" class="column2"><%= link_to l.title, listing_path(l) %></p>
   <p class="column3"><%= l.description %></p>
 

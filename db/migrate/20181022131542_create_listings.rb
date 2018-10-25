@@ -10,7 +10,6 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :landlord_email
       t.string :address_id
       t.boolean :available
-      t.string :picture_url
 
       t.timestamps
     end

@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_113530) do
     t.string "landlord_email"
     t.string "address_id"
     t.boolean "available"
-    t.string "picture_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

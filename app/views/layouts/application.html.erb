@@ -157,6 +157,7 @@
   <a href="<%= relevant_path %>"><img class="sidenavimg" src="<%=image_url('4.png')%>" style="width:160px;height:100px;" margin-right=0 alt="Recommendations page"></a>
 
 <% if !user_signed_in? %>
+<%= link_to "All listings", listings_path %>&nbsp&nbsp
 <%= link_to "Sign Up", new_user_registration_path %>&nbsp &nbsp
 <%= link_to "Log In", new_user_session_path %>&nbsp &nbsp
 <% end %>
