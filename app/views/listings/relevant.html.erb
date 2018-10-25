@@ -1,15 +1,14 @@
-<h3>Recommended listings</h3><hr> 
+<h3>Recommended listings</h3><hr>
 <% if @user.relevants.length > 0 %>
-<% @listings.each do |l| %>
-  <% @user.relevants.each do |relevant| %>
-    <% if l.postcode[0..2].downcase == relevant.postcode[0..2].downcase or l.postcode.downcase == relevant.postcode.downcase%>
-          <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
-          <p class="column2"><%= link_to l.title, listing_path(l) %></p>
-          <p class="column3"><%= l.description %></p>
+  <% @listings.each do |l| %>
+    <% @user.relevants.each do |relevant| %>
+      <% if l.postcode[0..2].downcase == relevant.postcode[0..2].downcase or l.postcode.downcase == relevant.postcode.downcase%>
+        <a href="<%= listing_path(l) %>" class="column"><img src="<%= l.picture_url%>" style="max-width:200px;max-height:300px;"> </a>
+        <p class="column2"><%= link_to l.title, listing_path(l) %></p>
+        <p class="column3"><%= l.description %></p>
+      <% end %>
     <% end %>
-
   <% end %>
-<% end %>
-<% else %>
+  <% else %>
   <p text-align='center'>You don't have any relevant listings yet. Try updating your postcodes of interest.
 <% end %>

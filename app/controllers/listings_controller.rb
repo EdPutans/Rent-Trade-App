@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
   def favourites
       @user = current_user
   end
+
   def my_listings
     @listings=Listing.where(user_id:current_user.id)
     render :index
@@ -36,6 +37,7 @@ class ListingsController < ApplicationController
   end
 
 def postcodes
+  @postcodes=current_user.relevants.map { |r| r.postcode}
   @relevant=Relevant.find_or_create_by(user_id: current_user.id)
 end
 

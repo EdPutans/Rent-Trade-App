@@ -65,7 +65,7 @@
       border-radius: 3px;
     }
 
-    
+
     img:hover {
         background: #e1e1e1;
         border: 1px solid black;
@@ -135,20 +135,17 @@
 
 
 <div class="sidenav">
+  <a href="<%= relevant_path %>"><img  src="<%=image_url('4.jpeg')%>" style="width:160px;height:100px;" margin-right=0 alt="Home">      </a>
 
 <% if !user_signed_in? %>
-<a href="<%= listings_path %>"><img src="<%=image_url('4.jpeg')%>" border="5" style="width:160px;height:100px;" margin-right=0 alt="Home">      </a>
-<br>
 <%= link_to "Sign Up", new_user_registration_path %>&nbsp &nbsp
 <%= link_to "Log In", new_user_session_path %>&nbsp &nbsp
 <%= link_to "About us", about_path %>&nbsp &nbsp
 <% end %>
 
 <% if user_signed_in? %>
-<a href="<%= listings_path %>"><img  src="<%=image_url('4.jpeg')%>" style="width:160px;height:100px;" margin-right=0 alt="Home">      </a>
-
 <%= link_to "Favourites", favourites_path %>&nbsp &nbsp
-<%= link_to "Recommended", relevant_path %>&nbsp &nbsp
+<%= link_to "All listings", listings_path %>&nbsp &nbsp
 <%= link_to "Add a listing", new_listing_path %>&nbsp &nbsp
 <%= link_to "Account Settings", edit_user_registration_path %>&nbsp &nbsp
 <%= link_to "My Postcodes of Interest", postcodes_path %>&nbsp &nbsp
