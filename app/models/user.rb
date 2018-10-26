@@ -13,4 +13,11 @@ class User < ApplicationRecord
   validates :phone, :email, :username, uniqueness: true
   validates :phone, numericality: true
   # åvalidates :password, length: {:within => 6..20}
+
+  def send_mail
+      UserMailer.welcome_email(self).deliver_now
+  end
+
+  after_create :send_mail
+  after_update :send_mail
 end
