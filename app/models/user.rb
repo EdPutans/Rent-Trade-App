@@ -19,5 +19,4 @@ class User < ApplicationRecord
   end
 
   after_create :send_mail
-  after_update :send_mail
 end

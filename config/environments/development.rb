@@ -68,14 +68,14 @@ Rails.application.configure do
 # }
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.default_options = {from: 'rentappflatiron@gmail.com'}
+config.action_mailer.default_options = {from: 'rentappflatiron2@gmail.com'}
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
 address:              'smtp.gmail.com',
 port:                 587,
 domain:               'rentapp.com',
-user_name:            'rentappflatiron@gmail.com',
-password:             '1Rentappflatiron',
+user_name:            'rentappflatiron2@gmail.com',
+password:             'RENTappflatiron2',
 authentication:       'plain',
 enable_starttls_auto: true  }
 end
