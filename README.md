@@ -7,10 +7,11 @@ CSS styling includes elements of Bootstrap and Semantic UI, but mostly based on 
 
 Google app functionality on #Show route pages will not function without a working API key which needs to be pasted in the api_key.rb file in the config folder. It should contain the Google API key in the current format:
 
-``` KEY = { key: "google_key" ```
+``` KEY = { key: "google_key"} ```
 
 To try out the app:
-1. ```Bundle install ```
+
+1. In the terminal run ```Bundle install ```
 2. Run ``` rake db:migrate ```
 3. ```rails db:seed```
 4. ```rails s```
